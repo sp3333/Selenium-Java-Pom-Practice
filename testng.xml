@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression">
+
+<listeners>
+<listener class-name="com.test.automation.UIAutomation.CustomListener.Listener"></listener>
+</listeners>
+  <test name="Registration">
+<classes>
+<class name="com.test.automation.UIAutomation.Homepage.TC003_VerifyLoginWithDifferentRecords"></class>
+
+</classes>  
+  
+  </test> <!-- Registration -->
+</suite> <!-- Regression -->

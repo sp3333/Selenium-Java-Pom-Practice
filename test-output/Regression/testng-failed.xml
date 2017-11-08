@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression]">
+  <listeners>
+    <listener class-name="com.test.automation.UIAutomation.CustomListener.Listener"/>
+  </listeners>
+  <test name="Registration(failed)">
+    <classes>
+      <class name="com.test.automation.UIAutomation.Homepage.TC_004_VerifyingWomenLinks">
+        <methods>
+          <include name="Test"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.test.automation.UIAutomation.Homepage.TC_004_VerifyingWomenLinks -->
+    </classes>
+  </test> <!-- Registration(failed) -->
+</suite> <!-- Failed suite [Regression] -->

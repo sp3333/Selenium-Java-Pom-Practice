@@ -1,0 +1,17 @@
+Test base is parent class of all class
+Test base will support scripts
+Test base is main class of our project
+
+
+UIAction is Page factory
+We have to always create one constructor of a class that 
+is pageFactory in PageFactory class only
+
+PageFactory.initelements(driver, this)
+this refers to the current class object
+
+
+In selenium if there is error like unable to locate element 
+the u should go to html and see that that web element or link
+if it is inside the iframe
+Use ..driver.switchTo().frame(driver.findElement(By.id("")))

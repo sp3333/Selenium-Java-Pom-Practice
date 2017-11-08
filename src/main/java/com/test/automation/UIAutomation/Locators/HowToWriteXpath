@@ -1,0 +1,119 @@
+HTML = <a href="/projects/" title="Selenium Projects">Projects</a>
+XPATH FORMAT = //tagname[@attributeName = ‘AttributeValue’]
+
+For the above html the xpath will be
+xpath  =  //a[@href = '/projects/']   OR
+xpath = //a[@title = 'Selenium Projects']   OR
+xpath = //a[contains(text(),'Selenium Projects']  USE THIS TYPE OF XPATH
+
+We have to use xpath that gives us unique xpath
+
+How to write a CSS for this
+CSS SYNTAX tagname[attributename = 'attributevalue']
+To convert xpath to css
+CSS = a[href = '/projects/']
+CSS = a[title = 'Selenium Projects']
+
+
+GOING ONE PARENT UP IN HTML AND WRITING XPATH
+HTML = <li id="menu_documentation">
+       <a href="/docs/" title="Technical references and guides" class="">Documentation</a>
+xpath  =  //a[@href = '/docs/']   OR
+xpath = //a[@title = 'Technical references and guides']   OR
+xpath = //a[contains(text(),'Technical references and guides']
+XPATH = //li[@id = 'menu_documentation']/a
+
+The difference between this double slash and single slash is double slash is the relative path where as
+single slash is the absolute path which means
+
+CSS = a[href = '/docs/']   OR
+xpath = a[title = 'Technical references and guides']   OR
+xpath = a[contains(text(),'Technical references and guides']
+XPATH = //li[id = 'menu_documentation']>a
+
+-------------------------------------------------------------------
+NOW WE WILL WRITE XPATH FOR BRANCHED HTML
+
+HTML
+<div id="mBody">
+ <div id="sidebar">
+ <script src="/analytics.js" type="text/javascript"/>
+ <div id="mainContent">
+  <h2>What is Selenium?</h2>
+
+
+HERE WE WANT TO WRITE XPATH FOR     "What is Selenium"
+and it is inside div maincontent inside div mbody
+
+XPATH = //h2[contains(text(),'What is Selenium')]
+XPATH = //div[@id = 'mainContent']/h2[1]
+XPATH = //div[@id = 'mBody']/div[2]/h2[1]
+Here for the 3rd xpath there will be 2 results so u can select the first one just write
+h2[1] it is index of 1. IN CSS u can write :nth-child[1]
+
+for css whre u have id in xpath u just have to write # infront of the id name 
+CSS =  = //h2[contains(text(),'What is Selenium')]
+CSS = #mainContent>:nth-child[1]
+CSS = #mBody>:nth-child[3]>:nth-child[1]
+
+-----------------------------------------------------------------------------
+
+NOW IF U WANT TO WRITE XPATH FOR TEXTBOX
+
+HTML
+<input type="text" id="q" name="q" accesskey="s" size="30"/>
+
+XPATH = //input[@id = 'q']
+XPATH = //input[@name = 'q']
+
+CSS = #q
+CSS = input[id = 'q']
+XPATH = input[name = 'q']
+
+----------------------------------------------------------------------------------
+
+NOW IF U WANT TO WRITE XPATH FOR A BUTTON
+
+ HTML
+ <input type="submit" id="submit" value="Go"/>
+ 
+ XPATH = //input[@type = 'submit']
+ XPATH = //input[@type = 'submit'] and [@id = 'submit'] 
+ XPATH = //input[@id = 'submit']
+ XPATH = //input[@value = 'Go']
+
+ CSS = input[type = 'submit']
+ CSS = input[type = 'submit'] [id = 'submit'] 
+ CSS = #submit
+ CSS = input[value = 'Go']
+ 
+ 
+ ------------------------------------------------------------------------------------
+ NOW WE WILL WRITE XPATH FOR HIERARCHY
+ 
+<table id="choice">
+ <tbody>
+   <tr>
+     <td style="border-right: 1px solid rgb(204, 204, 204);">
+       <center>
+           <h3>Selenium WebDriver</h3>
+           
+XPATH = //table[@id = 'choice']/tbody/tr/td/center/h3
+XPATH = //h3[contains(text(),'Selenium WebDriver')]
+
+CSS = #choice>tbody>tr>td>center>h3
+CSS = table[id = 'choice']>tbody>tr>td>center>h3
+
+-----------------------------------------------------------------------------------------
+
+NOW WE WILL WRITE XPATH FOR A DYNAMIC OBJECT WHICH IS LIKELY TO BE CHANGED EVERY TIME AT NEW SESSIONS
+IT IS FOR EXAMPLE NOT A FIXED ID OR IT HAS _ OR NUMBERSIN IT
+
+HTML
+<input value="Log In" tabindex="4" data-testid="royal_login_button" type="submit" id="u_0_4" class=""/>
+
+XPATH = //input[starts-with[@id ,'u']]
+CSS = input[id^ = 'u']
+
+IF YOUR END PART IS FIXED THEN U HAVE TO WRITE ENDS WITH AND IN CSS U HAVE TO WRITE $
+ 
